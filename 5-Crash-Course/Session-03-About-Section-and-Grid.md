@@ -64,6 +64,8 @@ Every time you see a **📌 "First Time Seeing This?"** callout, it means that t
 | `<li>`           | List item (inside `<ul>` or `<ol>`) | `<li>BCA Program</li>`               |
 | `<figure>`       | Image with optional caption      | `<figure><img ...></figure>`              |
 | `<figcaption>`   | Caption for a `<figure>`         | `<figcaption>Campus</figcaption>`         |
+| `<small>`        | Smaller text (de-emphasized)     | `<small>Fine print</small>`               |
+| `<h5>`           | Fifth-level heading              | `<h5>Card Title</h5>`                     |
 
 ---
 
@@ -1025,6 +1027,65 @@ All new tags, attributes, and Bootstrap classes introduced in this session:
 | 33| `border-0`           | Bootstrap   | Removes default border                                  |
 | 34| `align-items-center` | Bootstrap   | Vertically centers items in a flex row                  |
 | 35| `p-4`                | Bootstrap   | Padding on all sides — 1.5rem                           |
+| 36| `col-6`              | Bootstrap   | 6/12 columns (half width) on all screen sizes           |
+| 37| `col-lg-3`           | Bootstrap   | 3/12 columns (quarter) on large screens and up          |
+| 38| `col-lg-4`           | Bootstrap   | 4/12 columns (one-third) on large screens and up        |
+| 39| `col-lg-8`           | Bootstrap   | 8/12 columns (two-thirds) on large screens and up       |
+| 40| `mb-4`, `mb-5`       | Bootstrap   | Margin-bottom: 1.5rem / 3rem                            |
+| 41| `mb-2`, `mt-2`       | Bootstrap   | Small margin-bottom / margin-top (0.5rem)               |
+| 42| `bg-light`           | Bootstrap   | Light gray background color                             |
+| 43| `<img>`              | HTML tag    | Embeds an image — requires `src` and `alt` attributes   |
+| 44| `<small>`            | HTML tag    | Renders text in a smaller font size                     |
+| 45| `<h5>`               | HTML tag    | Fifth-level heading (used in card examples)             |
+| 46| `<p>`                | HTML tag    | Paragraph of text                                       |
+| 47| `<div>`              | HTML tag    | Generic block container (no semantic meaning)           |
+| 48| `id`                 | Attribute   | Unique identifier — enables `href="#about"` linking     |
+| 49| `alt`                | Attribute   | Alternative text for images (accessibility + SEO)       |
+| 50| `src`                | Attribute   | Source URL for images, scripts, and media               |
+| 51| `class`              | Attribute   | Assigns one or more CSS/Bootstrap classes to an element |
+| 52| `navbar`             | Bootstrap   | Main navbar wrapper (from Session 1)                    |
+| 53| `navbar-expand-lg`   | Bootstrap   | Collapses navbar below `lg` breakpoint (from Session 1) |
+| 54| `navbar-dark`, `bg-dark` | Bootstrap | Dark navbar with light text (from Session 1)           |
+| 55| `sticky-top`         | Bootstrap   | Sticks to viewport top on scroll (from Session 1)       |
+| 56| `navbar-brand`       | Bootstrap   | Logo or site name in navbar (from Session 1)            |
+| 57| `navbar-toggler`     | Bootstrap   | Hamburger menu button for mobile (from Session 1)       |
+| 58| `navbar-toggler-icon`| Bootstrap   | Three-line hamburger icon (from Session 1)              |
+| 59| `collapse`, `navbar-collapse` | Bootstrap | Collapsible navbar content area (from Session 1)  |
+| 60| `navbar-nav`         | Bootstrap   | Container for navigation links (from Session 1)         |
+| 61| `nav-item`, `nav-link` | Bootstrap | Nav list item and its styled link (from Session 1)      |
+| 62| `ms-auto`            | Bootstrap   | Auto start-margin — pushes items right (from Session 1) |
+| 63| `active`             | Bootstrap   | Highlights current/selected item (from Session 1)       |
+| 64| `dropdown`, `dropdown-toggle` | Bootstrap | Dropdown wrapper and trigger (from Session 1)     |
+| 65| `dropdown-menu`, `dropdown-item` | Bootstrap | Dropdown container and links (from Session 1)   |
+| 66| `dropdown-divider`   | Bootstrap   | Horizontal separator in dropdown (from Session 1)       |
+| 67| `carousel`, `slide`  | Bootstrap   | Carousel with slide animation (from Session 2)          |
+| 68| `carousel-indicators`| Bootstrap   | Dot indicators for carousel (from Session 2)            |
+| 69| `carousel-inner`     | Bootstrap   | Wrapper for all slides (from Session 2)                 |
+| 70| `carousel-item`      | Bootstrap   | Individual carousel slide (from Session 2)              |
+| 71| `d-block`, `w-100`   | Bootstrap   | Display block + full width for images (from Session 2)  |
+| 72| `carousel-caption`   | Bootstrap   | Text overlay on a slide (from Session 2)                |
+| 73| `carousel-control-prev`, `-next` | Bootstrap | Prev / next navigation buttons (from Session 2)  |
+| 74| `carousel-control-prev-icon`, `-next-icon` | Bootstrap | Arrow icons for controls (from Session 2) |
+| 75| `visually-hidden`    | Bootstrap   | Hidden visually, readable by screen readers (from Session 2) |
+| 76| `<!DOCTYPE html>`    | Declaration | Declares the document as HTML5 (from Session 1)        |
+| 77| `<html>`, `<head>`, `<body>` | HTML tag | Core document structure elements (from Session 1)  |
+| 78| `<meta>`             | HTML tag    | Metadata — charset, viewport, etc. (from Session 1)     |
+| 79| `<title>`, `<link>`, `<script>` | HTML tag | Page title, CSS link, JS link (from Session 1)   |
+| 80| `<nav>`              | HTML tag    | Semantic navigation landmark (from Session 1)           |
+| 81| `<a>`                | HTML tag    | Hyperlink (anchor) element (from Session 1)             |
+| 82| `<button>`           | HTML tag    | Clickable button element (from Session 1)               |
+| 83| `<span>`             | HTML tag    | Inline container element (from Session 1)               |
+| 84| `<h1>`               | HTML tag    | Top-level page heading (from Session 2)                 |
+| 85| `<hr>`               | HTML tag    | Horizontal rule / divider line (from Session 1)         |
+| 86| `lang`, `charset`    | Attribute   | Document language and encoding (from Session 1)         |
+| 87| `href`, `rel`        | Attribute   | Link destination and relationship (from Session 1)      |
+| 88| `type`, `role`       | Attribute   | Button type and ARIA role (from Session 1)              |
+| 89| `name`, `content`    | Attribute   | Meta tag name-value pair (from Session 1)               |
+| 90| `data-bs-toggle`, `data-bs-target` | Attribute | Bootstrap JS trigger and target (from Session 1) |
+| 91| `data-bs-ride`       | Attribute   | Auto-starts carousel cycling (from Session 2)           |
+| 92| `data-bs-slide-to`, `data-bs-slide` | Attribute | Slide index and direction (from Session 2)       |
+
+> **Note:** Rows 52–92 list items from Sessions 1 and 2 that appear in this session's cumulative code. They are included here for quick reference — see the original sessions for detailed explanations.
 
 ---
 
