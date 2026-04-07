@@ -59,6 +59,20 @@ Today we add a **security guard** (validation) to our form. Every field gets che
 | `classList.add()` / `classList.remove()` | Adds or removes CSS classes from an element | Putting on / taking off a uniform |
 | `is-valid` / `is-invalid` | Bootstrap classes that show green ✅ or red ❌ borders | Traffic lights for form fields |
 | `novalidate` | Tells the browser: "Don't validate — I'll do it myself with JS" | "Security guard says: I'll handle entry, not the gate" |
+| `needs-validation` | Bootstrap class on `<form>` — marks it for custom JS validation | 🏷️ A sign saying "ID check required at this door" |
+| `justify-content-center` | Centers flex children horizontally within a row | 🎯 Centering a poster on a notice board |
+| `col-md-6` | Takes half (6 of 12) the row width on medium+ screens | 📐 Splitting a desk into two equal halves |
+| `col-12` | Takes all 12 columns (full width) at every screen size | 📏 Using the entire width of the desk |
+| `form-label` | Styles a `<label>` for consistent Bootstrap form appearance | 🏷️ A printed name tag above each field |
+| `g-3` | Medium gutter (gap) between grid columns and rows | 📏 Medium spacing between items on a shelf |
+| `px-5` | Extra-large horizontal padding (left + right) | ↔️ Wide cushions on both sides of a button |
+| `mt-4` | Medium-large top margin (spacing above an element) | ⬇️ Leaving a gap above an element |
+| `alert-success` | Green-coloured Bootstrap alert box for success messages | 🟢 A green "All Clear!" banner |
+| `text-success` | Makes text green (Bootstrap contextual colour) | 🟢 Writing in green ink |
+| `text-danger` | Makes text red (Bootstrap contextual colour) | 🔴 Writing in red ink — warning! |
+| `text-warning` | Makes text orange/yellow (Bootstrap contextual colour) | 🟡 Writing in orange ink — caution! |
+| `progress` | Container element for a Bootstrap progress bar | 📊 The empty track of a loading bar |
+| `progress-bar` | The filled portion inside a `progress` container | 📊 The coloured fill showing completion |
 
 ---
 
@@ -304,6 +318,10 @@ Add `novalidate` to your `<form>`, use `is-valid`/`is-invalid` classes on inputs
 
 > 💡 **How does Bootstrap know which message to show?** It's all based on CSS! When an input has the class `is-valid`, Bootstrap uses CSS to **show** the `valid-feedback` sibling and **hide** the `invalid-feedback` sibling. When it has `is-invalid`, the opposite happens. Both divs are always in the HTML — CSS controls which one is visible.
 
+> 📌 **First Time Seeing `col-md-6`?** This Bootstrap grid class makes a column take **half the row** (6 out of 12 columns) on medium screens and above. On small screens it becomes full-width. We saw `col-md-4` and `col-md-8` in Session 3 — same idea, different width.
+
+> 📌 **First Time Seeing `form-label`?** This Bootstrap class styles a `<label>` element to match the form's look — consistent font size, proper spacing, and the right margin below the label text.
+
 ---
 
 ## 📖 Real-Time Validation — Checking As You Type
@@ -463,6 +481,28 @@ We need to add `novalidate`, feedback `<div>`s, and IDs to our existing contact 
 📌 **`novalidate`** — This attribute on the `<form>` tag tells the browser: "Don't show your built-in validation popups. I have my own JavaScript validation that will handle everything." Without this, you'd see both the browser's AND your custom error messages.
 
 📌 **`valid-feedback` / `invalid-feedback`** — These `<div>` elements are **hidden by default**. They only become visible when Bootstrap detects `is-valid` or `is-invalid` on the sibling input. It's all controlled by CSS — no extra JavaScript needed for showing/hiding these divs!
+
+> 📌 **First Time Seeing `needs-validation`?** This Bootstrap class on the `<form>` tag signals that you'll handle validation yourself with JavaScript. It's a companion to `novalidate` — together they say "browser, stand down; my JS is the security guard."
+
+> 📌 **First Time Seeing `justify-content-center`?** This Bootstrap flexbox utility centers all child columns horizontally within a `row`. Think of it as centering a single narrow column in the middle of the page instead of letting it stick to the left.
+
+> 📌 **First Time Seeing `col-12`?** Takes all 12 grid columns — the full width of the row — at every screen size. Use this when a field (like the message textarea) needs to stretch across the entire form width.
+
+> 📌 **First Time Seeing `g-3`?** Sets a **medium gutter** (gap) between columns and rows in a Bootstrap grid. We used `g-4` in Session 3 — `g-3` is slightly tighter spacing. The number (0–5) controls gap size.
+
+> 📌 **First Time Seeing `px-5`?** Adds **extra-large horizontal padding** (left + right). We used `px-3` in Session 2 — the number (0–5) controls padding size. Here it gives the Submit button wider click area.
+
+> 📌 **First Time Seeing `mt-4`?** Adds a **medium-large top margin**. We've seen `mt-2` (Session 4) and `mt-5` (Session 2) — `mt-4` is in between. The `m` = margin, `t` = top, `4` = size.
+
+> 📌 **First Time Seeing `alert-success`?** A green-coloured Bootstrap alert. We used `alert-info` (blue) in Session 6 — `alert-success` is the green variant for positive messages like "Form submitted successfully!"
+
+> 📌 **First Time Seeing `type="tel"`?** This input type tells mobile browsers to show a **numeric keypad** instead of a full keyboard. It doesn't validate the format — that's what our regex does. Other new types here: `type="number"` (shows spinner arrows) and `type="checkbox"`.
+
+> 📌 **First Time Seeing `min` and `max`?** These HTML attributes on `<input type="number">` set the allowed range. The browser shows spinner arrows that respect these limits, but always validate in JS too — users can type past the limits manually.
+
+> 📌 **First Time Seeing `selected`?** This attribute on an `<option>` tag makes it the **default choice** when the page loads. Without it, the first `<option>` is selected by default.
+
+> 📌 **First Time Seeing `rows`?** This attribute on `<textarea>` controls how many **visible text lines** are shown (the initial height). Users can still type beyond this — it just sets the default visible area.
 
 ---
 
@@ -656,6 +696,8 @@ Let's walk through the key parts:
 
 📌 **`forEach(function(field) {...})`:** This loops through each element found by `querySelectorAll` and runs the function for each one. We'll learn more about `forEach` in a later session.
 
+> 📌 **First Time Seeing `text-success` and `text-danger`?** These Bootstrap utility classes change text colour — `text-success` makes it **green** and `text-danger` makes it **red**. In the character counter, we use green to signal "you've typed enough" and red for "too short." Similar to `text-muted` (Session 3) and `text-primary` (Session 4) — same pattern, different colours.
+
 ---
 
 ### Step 3: Test Your Validation
@@ -734,6 +776,92 @@ Before moving on, verify that everything works:
 | Redeclare | ✅ | ❌ | ❌ |
 | Best for | Legacy code | Values that change | Values that don't change |
 
+### HTML Tags Used in This Session
+
+| Tag | Type | What It Does |
+|-----|------|-------------|
+| `<section>` | Structural | Defines a thematic section of the page (from Session 1) |
+| `<div>` | Container | Generic container for grouping and layout (from Session 1) |
+| `<h2>` | Heading | Second-level heading (from Session 1) |
+| `<h4>` | Heading | Fourth-level heading — used in the success alert |
+| `<p>` | Text | Paragraph of text (from Session 1) |
+| `<form>` | Form | Wraps form fields for submission (from Session 8) |
+| `<label>` | Form | Clickable label linked to an input via `for` attribute (from Session 8) |
+| `<input>` | Form | Single-line field — text, email, tel, number, checkbox, password (from Session 8) |
+| `<select>` | Form | Dropdown menu (from Session 8) |
+| `<option>` | Form | A single choice inside a `<select>` dropdown (from Session 8) |
+| `<textarea>` | Form | Multi-line text input (from Session 8) |
+| `<small>` | Text | Smaller, secondary text — used for the character counter |
+| `<span>` | Inline | Generic inline container — wraps the live character count |
+| `<button>` | Interactive | Clickable button — `type="submit"` triggers form submission (from Session 2) |
+| `<script>` | Script | Contains or links JavaScript code (from Session 4) |
+
+### Bootstrap Classes — Layout & Utilities
+
+| Class | Type | What It Does |
+|-------|------|-------------|
+| `container` | Layout | Fixed-width centered container (from Session 1) |
+| `row` | Layout | Horizontal flex container for grid columns (from Session 3) |
+| `col-md-6` | Grid | Half-width column (6/12) on medium+ screens |
+| `col-12` | Grid | Full-width column (12/12) at all screen sizes |
+| `col-lg-8` | Grid | Two-thirds width (8/12) on large+ screens (from Session 3) |
+| `g-3` | Grid | Medium gutter (gap) between columns and rows |
+| `justify-content-center` | Flex | Centers child columns horizontally within a row |
+| `py-5` | Spacing | Large vertical padding — top + bottom (from Session 2) |
+| `px-5` | Spacing | Extra-large horizontal padding — left + right |
+| `mt-2` | Spacing | Small top margin (from Session 4) |
+| `mt-4` | Spacing | Medium-large top margin |
+| `mb-4` | Spacing | Medium-large bottom margin (from Session 3) |
+| `bg-light` | Background | Light grey background colour (from Session 3) |
+| `text-center` | Text | Center-aligns text (from Session 3) |
+| `text-muted` | Text | Grey subdued text colour (from Session 3) |
+| `text-success` | Text | Green text colour — positive/success feedback |
+| `text-danger` | Text | Red text colour — error/danger feedback |
+| `text-warning` | Text | Orange/yellow text colour — caution feedback |
+| `fw-bold` | Text | Bold font weight (from Session 1) |
+| `btn` | Button | Base Bootstrap button class (from Session 2) |
+| `btn-primary` | Button | Blue primary button style (from Session 2) |
+| `btn-lg` | Button | Large button size (from Session 2) |
+| `form-label` | Form | Styles a `<label>` for Bootstrap forms |
+| `form-control` | Form | Styles `<input>`, `<textarea>` as Bootstrap form fields (from Session 5) |
+| `form-select` | Form | Styles a `<select>` dropdown (from Session 8) |
+| `form-check` | Form | Wrapper for checkbox/radio layout (from Session 8) |
+| `form-check-input` | Form | Styles a checkbox/radio input (from Session 8) |
+| `form-check-label` | Form | Styles the label next to a checkbox/radio (from Session 8) |
+| `alert` | Component | Base Bootstrap alert box (from Session 6) |
+| `alert-success` | Component | Green success alert variant |
+| `progress` | Component | Container/track for a progress bar |
+| `progress-bar` | Component | Filled portion inside a progress container |
+| `d-none` | Display | Hides an element completely — `display: none` (from Session 5) |
+
+### HTML Attributes Used in This Session
+
+| Attribute | Used On | What It Does |
+|-----------|---------|-------------|
+| `id` | Any element | Unique identifier — used by JS `getElementById()` and CSS `#id` (from Session 1) |
+| `class` | Any element | Assigns CSS/Bootstrap classes to an element (from Session 1) |
+| `for` | `<label>` | Links label to an input by matching the input's `id` (from Session 8) |
+| `type` | `<input>`, `<button>` | Sets input kind: `text`, `email`, `tel`, `number`, `checkbox`, `password`, `submit` |
+| `name` | Form fields | Field name sent with form data (from Session 8) |
+| `placeholder` | `<input>`, `<textarea>` | Greyed-out hint text shown when field is empty (from Session 8) |
+| `required` | Form fields | Marks field as mandatory for submission (from Session 8) |
+| `novalidate` | `<form>` | Disables built-in browser validation — lets JS handle it |
+| `min` / `max` | `<input type="number">` | Sets allowed range — browser enforces minimum and maximum values |
+| `value` | `<option>` | The data sent when this option is selected |
+| `selected` | `<option>` | Makes this option the default selection when the page loads |
+| `rows` | `<textarea>` | Number of visible text lines (height) of the textarea |
+| `maxlength` | `<input>`, `<textarea>` | Maximum characters the user can type — browser-enforced limit |
+| `role` | Any element | Accessibility hint for screen readers (e.g., `role="progressbar"`) |
+| `style` | Any element | Inline CSS — e.g., `style="height: 6px"` (from Session 1) |
+| `oninput` | `<input>` | Inline event handler — fires JS on every keystroke (prefer `addEventListener`) |
+
+### CSS Properties (Inline Styles)
+
+| Property | Example | What It Does |
+|----------|---------|-------------|
+| `height` | `height: 6px` | Sets the element's height — used to make a thin progress bar |
+| `width` | `width: 0%` | Sets the element's width — JS updates this to fill the progress bar |
+
 ---
 
 ## 📝 Key Takeaways
@@ -775,6 +903,8 @@ if (value.length >= maxChars) {
     charCount.className = 'text-danger';
 }
 ```
+
+> 📌 **First Time Seeing `text-warning`?** This Bootstrap utility makes text **orange/yellow** — the caution colour. Combined with `text-success` (green) and `text-danger` (red), you get a full traffic-light colour system for feedback.
 
 ### Challenge 2: Indian PIN Code Validation (⭐⭐ Medium)
 
@@ -861,6 +991,14 @@ const hasMinLength = /.{8,}/;
 ```
 
 **Write the JavaScript yourself!** Use a `let score = 0;` variable. For each regex that `.test()` returns `true`, increment the score. Then use `if/else if` to set the bar width and color based on the score.
+
+> 📌 **First Time Seeing `progress` and `progress-bar`?** Bootstrap's progress component has two parts: `progress` is the outer **track** (grey background bar) and `progress-bar` is the inner **fill** (the coloured portion). Set the fill width with `style="width: 50%"` and colour with classes like `bg-success` or `bg-danger`.
+
+> 📌 **First Time Seeing `role="progressbar"`?** The `role` HTML attribute is an **accessibility** hint for screen readers. It tells assistive technology "this element behaves like a progress bar" even though it's just a `<div>`.
+
+> 📌 **First Time Seeing `maxlength`?** This HTML attribute on `<input>` or `<textarea>` sets the **maximum number of characters** the user can type. The browser enforces it automatically — no JavaScript needed.
+
+> 📌 **First Time Seeing `type="password"`?** This input type hides characters as the user types (shows dots or asterisks). The value is still plain text in JavaScript — the masking is visual only.
 
 ---
 
