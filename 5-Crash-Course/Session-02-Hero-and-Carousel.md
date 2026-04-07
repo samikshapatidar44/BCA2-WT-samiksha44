@@ -65,6 +65,7 @@ Here are the **new** HTML tags and attributes you'll meet for the first time in 
 | `<ul>`, `<li>` | Unordered list and list items | Session 1 |
 | `<nav>` | Navigation bar container | Session 1 |
 | `<span>` | Inline container for text | Session 1 |
+| `<button>` | Clickable button element | Session 1 |
 
 > 💡 **Remember from Session 1:** We already learned `<div>`, `<ul>`, `<li>`, `<nav>`, `<span>`, `<button>`, `<a>` (as link), and `<input>`. We won't explain those again — refer to Session 1 if you need a refresher!
 
@@ -812,6 +813,20 @@ All the **new** tags, attributes, and Bootstrap classes introduced in this sessi
 | `<p>` | Paragraph of text | `<p>Some text here.</p>` |
 | `<img>` | Embeds an image | `<img src="photo.jpg" alt="Photo">` |
 | `<script>` | Embeds JavaScript code | `<script>console.log("Hi");</script>` |
+| `<a>` (as button) | Link styled as a button with Bootstrap `btn` classes | `<a href="#about" class="btn btn-lg btn-light">Explore</a>` |
+| `<button>` | Clickable button (carousel controls, indicators) | `<button type="button" data-bs-target="#heroCarousel">` |
+| `<!DOCTYPE html>` | Document type declaration (from Session 1) | `<!DOCTYPE html>` |
+| `<html>` | Root element of the page (from Session 1) | `<html lang="en">` |
+| `<head>` | Contains metadata and links (from Session 1) | `<head>...</head>` |
+| `<meta>` | Metadata like charset and viewport (from Session 1) | `<meta charset="UTF-8">` |
+| `<title>` | Page title shown in browser tab (from Session 1) | `<title>BCA 2025-26</title>` |
+| `<link>` | Links external stylesheets (from Session 1) | `<link href="..." rel="stylesheet">` |
+| `<body>` | Contains all visible page content (from Session 1) | `<body>...</body>` |
+| `<nav>` | Navigation bar container (from Session 1) | `<nav class="navbar">...</nav>` |
+| `<div>` | Generic container element (from Session 1) | `<div class="container">...</div>` |
+| `<span>` | Inline container for text (from Session 1) | `<span class="navbar-toggler-icon"></span>` |
+| `<ul>` | Unordered list (from Session 1) | `<ul class="navbar-nav">...</ul>` |
+| `<li>` | List item (from Session 1) | `<li class="nav-item">...</li>` |
 
 ### New HTML Attributes
 
@@ -828,6 +843,17 @@ All the **new** tags, attributes, and Bootstrap classes introduced in this sessi
 | `aria-label` | Buttons | Accessibility label for screen readers |
 | `aria-hidden` | Icons | Hides decorative elements from screen readers |
 | `aria-current` | Active indicator | Marks the current item for accessibility |
+| `data-bs-interval` | Carousel div/item | Time in ms between auto-slides (e.g., `"3000"`) |
+| `style` | Any element | Inline CSS (e.g., `style="padding-top: 56px;"`) |
+| `type` | `<button>` | Button type attribute, e.g., `"button"` (from Session 1) |
+| `id` | Any element | Unique identifier for targeting (from Session 1) |
+| `href` | `<a>`, `<link>` | URL or anchor link destination (from Session 1) |
+| `rel` | `<link>` | Relationship type, e.g., `"stylesheet"` (from Session 1) |
+| `lang` | `<html>` | Page language, e.g., `"en"` (from Session 1) |
+| `charset` | `<meta>` | Character encoding, e.g., `"UTF-8"` (from Session 1) |
+| `name` | `<meta>` | Meta tag name, e.g., `"viewport"` (from Session 1) |
+| `content` | `<meta>` | Meta tag value (from Session 1) |
+| `data-bs-toggle` | Navbar/dropdown | Toggles collapse or dropdown (from Session 1) |
 
 ### New Bootstrap Classes
 
@@ -858,6 +884,37 @@ All the **new** tags, attributes, and Bootstrap classes introduced in this sessi
 | `mt-3` | Margin-top level 3 (1rem) |
 | `visually-hidden` | Hidden from view but readable by screen readers |
 | `active` | Marks the currently shown slide/indicator |
+| `btn-primary` | Blue filled button style |
+| `btn-outline-light` | White bordered button (transparent fill) |
+| `btn-warning` | Yellow/orange button style (from Challenge 3) |
+| `btn-success` | Green button style (from Challenge 3) |
+| `img-fluid` | Makes image responsive (scales with container) |
+| `py-5` | Padding on Y-axis (top + bottom), level 5 (3rem) |
+| `px-3` | Padding on X-axis (left + right), level 3 |
+| `pt-5` | Padding-top only, level 5 (3rem) |
+| `pb-3` | Padding-bottom only, level 3 |
+| `navbar` | Base navbar component class (from Session 1) |
+| `navbar-expand-lg` | Navbar expands on large screens (from Session 1) |
+| `navbar-dark` | Light text for dark navbar backgrounds (from Session 1) |
+| `bg-dark` | Dark background color (from Session 1) |
+| `fixed-top` | Fixes element to top of viewport (from Session 1) |
+| `container-fluid` | Full-width responsive container (from Session 1) |
+| `container` | Centered responsive container with max-width (from Session 1) |
+| `navbar-brand` | Brand/logo text in navbar (from Session 1) |
+| `navbar-toggler` | Hamburger menu button for mobile (from Session 1) |
+| `navbar-toggler-icon` | Hamburger icon (☰) inside toggler (from Session 1) |
+| `collapse` | Collapsible content wrapper (from Session 1) |
+| `navbar-collapse` | Navbar-specific collapsible section (from Session 1) |
+| `navbar-nav` | Nav list inside navbar (from Session 1) |
+| `ms-auto` | Auto margin-start — pushes items to the right (from Session 1) |
+| `nav-item` | Individual nav entry in navbar (from Session 1) |
+| `nav-link` | Styled link inside nav-item (from Session 1) |
+| `dropdown` | Dropdown trigger container (from Session 1) |
+| `dropdown-toggle` | Link/button that opens dropdown menu (from Session 1) |
+| `dropdown-menu` | The dropdown menu container (from Session 1) |
+| `dropdown-menu-end` | Aligns dropdown to the right edge (from Session 1) |
+| `dropdown-item` | Individual item inside dropdown menu (from Session 1) |
+| `mt-5` | Margin-top level 5, used for spacing (from Session 1) |
 
 ### JavaScript (Just One!)
 
