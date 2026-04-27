@@ -104,8 +104,39 @@
         </ul>
 
         <div>
+          <!--
+            ╔══════════════════════════════════════════════════════════════╗
+            ║  📌 TASK — JavaScript: Color Theme Switching (Dark Mode)     ║
+            ╚══════════════════════════════════════════════════════════════╝
+            This button switches the website between Light Mode and Dark Mode.
+
+            STEP 1 ▶ Give this button an id (e.g., id="darkModeToggle")
+                      and add Bootstrap classes to style it as a small
+                      outline-light button  (btn btn-outline-light btn-sm)
+
+            STEP 2 ▶ Inside the <i> tag, add Bootstrap Icons class for the
+                      moon icon: class="bi bi-moon-stars-fill"
+
+            STEP 3 ▶ Write JavaScript that does the following:
+              a) Gets a reference to this button using getElementById()
+              b) When the button is CLICKED:
+                   - Toggle the CSS class "dark-mode" on document.body
+                     using: document.body.classList.toggle('dark-mode')
+                   - If dark mode is ON → change the <i> icon to "bi-sun-fill"
+                   - If dark mode is OFF → change it back to "bi-moon-stars-fill"
+                   - Save the user's choice to localStorage:
+                     localStorage.setItem('bcaDarkMode', 'true' or 'false')
+              c) On page load, READ the saved preference from localStorage
+                 and apply it immediately so the theme is remembered.
+
+            HOW IT WORKS ▶ The CSS file (css/custom.css) already has all the
+              dark-mode styles under the selector  body.dark-mode { ... }
+              Your JavaScript just needs to add/remove that class!
+
+            REFERENCE ▶ See Section 11 in js/script.js for a working example.
+          -->
           <!-- Dark Mode Toggle -->
-          <button id="darkModeToggle" title="Toggle Dark Mode">
+          <button title="Toggle Dark Mode">
             <i></i>
           </button>
 
@@ -1060,7 +1091,39 @@
   <!-- ============================================
        BACK TO TOP BUTTON
        ============================================ -->
-  <button id="backToTop" aria-label="Back to top" title="Back to top">
+  <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  📌 TASK — JavaScript: Scroll Effect (Back-to-Top Button)    ║
+    ╚══════════════════════════════════════════════════════════════╝
+    This button appears when the user scrolls down the page and
+    smoothly scrolls back to the top when clicked.
+
+    STEP 1 ▶ Give this button an id (e.g., id="backToTop")
+              and add Bootstrap classes:  btn btn-primary back-to-top
+              ("back-to-top" is a custom class defined in css/custom.css
+              that keeps it fixed in the bottom-right corner, hidden by
+              default via opacity:0 and visibility:hidden)
+
+    STEP 2 ▶ Inside the <i> tag, add Bootstrap Icons class for an
+              up-arrow icon: class="bi bi-arrow-up"
+
+    STEP 3 ▶ Write JavaScript that does the following:
+      a) Gets a reference to this button using getElementById()
+      b) Listens for the window "scroll" event:
+           window.addEventListener('scroll', function() { ... });
+         - When window.scrollY > 300 → ADD the "show" class to the button
+           (the custom CSS rule .back-to-top.show makes it visible)
+         - When window.scrollY ≤ 300 → REMOVE the "show" class
+      c) When the button is CLICKED → smoothly scroll to the top:
+           window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    HOW IT WORKS ▶ Custom CSS already handles the animation — your
+      JavaScript just toggles the "show" class on scroll.
+      Check css/custom.css → look for  .back-to-top  and  .back-to-top.show
+
+    REFERENCE ▶ See Section 12 in js/script.js for a working example.
+  -->
+  <button aria-label="Back to top" title="Back to top">
     <i></i>
   </button>
 
